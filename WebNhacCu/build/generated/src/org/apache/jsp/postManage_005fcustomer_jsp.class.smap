@@ -1,0 +1,14 @@
+SMAP
+postManage_005fcustomer_jsp.java
+JSP
+*S JSP
+*F
++ 0 postManage_customer.jsp
+postManage_customer.jsp
+*L
+1,37:44
+38:81,3
+39,117:84
+156:201,3
+157,53:204
+*E
