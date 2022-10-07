@@ -51,7 +51,7 @@
 
                     <div class="col-md-7">
                         <div class="text-left">
-                            <h1>${o.title}</h1>
+                            <h1 style="font-weight: bold;">${o.title}</h1>
                         </div>
                         <hr />
                         <div>

@@ -6,6 +6,7 @@
 package control;
 
 import dao.DAO;
+import entity.Account;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -13,6 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -34,9 +36,15 @@ public class deletePostControl extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         DAO dao = new DAO();
+        HttpSession session = request.getSession();
+        Account acc = (Account) session.getAttribute("acc");
         String id = request.getParameter("post_id");
         dao.deleteLiquidation(id);
-        response.sendRedirect("PostManagementControl");
+        if (acc.getIsCus() == 1) {
+            response.sendRedirect("PostManagementCusControl");
+        } else if (acc.getIsAdmin() == 1 || acc.getIsStaff() == 1) {
+            response.sendRedirect("PostManagementControl");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

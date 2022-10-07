@@ -72,7 +72,7 @@
                     <c:forEach var="o" items="${listLiqui}">
                         <div class="col-sm-4 ">
                             <div class="best_shoes ">
-                                <p class="best_text ">${o.title}</p>
+                                <p class="best_text " >${o.title}</p>
                                 <div class="shoes_icon "><img class="list_product " src="${o.image}"></div>
                                 <div class="star_text center">
                                     <div class="left_part ">

@@ -54,7 +54,8 @@
                     </thead>
                     <tbody>
                     <c:forEach var="o" items="${listLiquiApproved}">
-                        <tr>
+                        <c:if test="${o.getSell_status() == 1}">
+                            <tr>
                             <td>
                                 <img class="imgRe" src="${o.image}" alt="Placholder Image 2" class="product-frame">
                             </td>
@@ -71,21 +72,17 @@
                                 <p>${o.price}</p>
                             </td>
                             <td>
-                                <c:if test="${o.sell_status == 1 }">
                                     <p>On sale</p>
-                                </c:if>
-                                <c:if test="${o.sell_status == 0 }">
-                                    <!--<p>On sell</p>-->
-                                </c:if>
-
                             </td>
 <!--                            <td>
-                                <a href="browsePostControl?post_id=${o.ID}}"><button type="submit" class="btn btn-success">Accept</button></a>
+                                <a href="browsePostControl?post_id=${o.ID}"><button type="submit" class="btn btn-success">Accept</button></a>
                             </td>
                             <td>
                                 <a href="deletePostControl?post_id=${o.ID}"><button type="submit" class="btn btn-success">Reject</button></a>
                             </td>-->
                         </tr>
+                        </c:if>
+                        
                     </c:forEach>
                 </tbody>
             </table>
@@ -105,7 +102,8 @@
                 </thead>
                 <tbody>
                     <c:forEach var="o" items="${listLiqui}">
-                        <tr>
+                        <c:if test="${o.getSell_status() == 0}">
+                            <tr>
                             <td>
                                 <img class="imgRe" src="${o.image}" alt="Placholder Image 2" class="product-frame">
                             </td>
@@ -122,21 +120,18 @@
                                 <p>${o.price}</p>
                             </td>
                             <td>
-                                <c:if test="${o.getSell_status() == 1 }">
-                                    <!--<p>Sold</p>-->
-                                </c:if>
-                                <c:if test="${o.getSell_status() == 0 }">
                                     <p>Browsing</p>
-                                </c:if>
 
                             </td>
                             <td>
-                                <a href="browsePostControl?post_id=${o.ID}}"><button type="submit" class="btn btn-success">Accept</button></a>
+                                <a href="browsePostControl?post_id=${o.ID}"><button type="submit" class="btn btn-success">Accept</button></a>
                             </td>
                             <td>
                                 <a href="deletePostControl?post_id=${o.ID}"><button type="submit" class="btn btn-warning">Reject</button></a>
                             </td>
                         </tr>
+                        </c:if>
+                        
                     </c:forEach>
                 </tbody>
             </table>

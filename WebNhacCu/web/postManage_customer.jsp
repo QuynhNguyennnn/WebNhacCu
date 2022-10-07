@@ -37,7 +37,7 @@
         <div class="header_section header_main">
             <jsp:include page="Header.jsp"></jsp:include>
             </div>
-            <div class="container-fluid" style="overflow-x: scroll;">
+            <div class="container-fluid" style="overflow-x: scroll; padding-bottom: 108px;">
                 <!--                <div class="basket-module">
                                     <a style="background-color: #28a745; margin: 24px 0;" href="#addProductModal" class="btn btn-success" data-toggle="modal"><i class="material-icons"></i> <span>Add New Product</span></a>
                                 </div>-->
@@ -46,7 +46,7 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th style="width:10%" class="text-center">Item</th>
+                            <th style="width:20%" class="text-center">Item</th>
                             <th class="text-center">Title</th>
                             <th class="text-center">Description</th>
                             <th class="text-center">Contact Description</th>
@@ -58,9 +58,9 @@
                     </thead>
                     <tbody>
                     <c:forEach var="o" items="${listLiqui}">
-                        <tr>
+                        <tr class="text-center">
                             <td>
-                                <p>${o.image}</p>
+                                <img src="${o.image}">
                             </td>
                             <td>
                                 ${o.title}
@@ -84,7 +84,13 @@
                             </td>
                             <td>
                             <td>
-                                <a href="deletePostControl?post_id=${o.ID}}"><button type="submit" class="btn btn-success">Sold</button></a>
+                                <c:if test="${o.getSell_status() == 0}">
+                                    <a href="deletePostControl?post_id=${o.ID}"><button type="submit" class="btn btn-success" disabled>Sold</button></a>
+                                </c:if>
+                                <c:if test="${o.getSell_status() == 1}">
+                                    <a href="deletePostControl?post_id=${o.ID}"><button type="submit" class="btn btn-success">Sold</button></a>
+                                </c:if>
+                                
                             </td>
                             </td>
                         </tr>

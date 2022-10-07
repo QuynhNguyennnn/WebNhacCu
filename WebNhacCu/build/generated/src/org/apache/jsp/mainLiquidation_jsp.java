@@ -12,6 +12,7 @@ public final class mainLiquidation_jsp extends org.apache.jasper.runtime.HttpJsp
   private static java.util.List<String> _jspx_dependants;
 
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_forEach_var_items;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_if_test;
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
@@ -21,10 +22,12 @@ public final class mainLiquidation_jsp extends org.apache.jasper.runtime.HttpJsp
 
   public void _jspInit() {
     _jspx_tagPool_c_forEach_var_items = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_c_if_test = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
   }
 
   public void _jspDestroy() {
     _jspx_tagPool_c_forEach_var_items.release();
+    _jspx_tagPool_c_if_test.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -98,10 +101,21 @@ public final class mainLiquidation_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("            <div style=\"background-color: #ACC3A6\" class=\"collection_section layout_padding \">\n");
       out.write("                <div class=\"container \">\n");
       out.write("                    <h1 class=\"new_text \"><strong>Liquidation</strong></h1>\n");
-      out.write("                    <button type=\"button\" class=\"btn btn-success\">Post</button>\n");
-      out.write("                    <button type=\"button\" class=\"btn btn-primary\">Manager Post</button>\n");
+      out.write("                ");
+      if (_jspx_meth_c_if_0(_jspx_page_context))
+        return;
       out.write("\n");
-      out.write("                    <p class=\"consectetur_text \">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas accusantium explicabo accusamus tempore reprehenderit voluptatem debitis adipisci autem nulla sed.</p>\n");
+      out.write("                ");
+      if (_jspx_meth_c_if_1(_jspx_page_context))
+        return;
+      out.write("\n");
+      out.write("                ");
+      if (_jspx_meth_c_if_2(_jspx_page_context))
+        return;
+      out.write("\n");
+      out.write("\n");
+      out.write("                    <p class=\"consectetur_text \">Need to liquidate your old musical instrument? Please post now to find a new owner for it</p>\n");
+      out.write("                    <p class=\"consectetur_text \">Below is a list of products that need to be liquidated</p>\n");
       out.write("                </div>\n");
       out.write("            </div>\n");
       out.write("            <!-- new collection section end -->\n");
@@ -178,6 +192,93 @@ public final class mainLiquidation_jsp extends org.apache.jasper.runtime.HttpJsp
     }
   }
 
+  private boolean _jspx_meth_c_if_0(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:if
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_0 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_if_0.setPageContext(_jspx_page_context);
+    _jspx_th_c_if_0.setParent(null);
+    _jspx_th_c_if_0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${sessionScope.acc.isAdmin == 1}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_if_0 = _jspx_th_c_if_0.doStartTag();
+    if (_jspx_eval_c_if_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\n");
+        out.write("                    <a href=\"postLiquidation.jsp\"><button type=\"button\" class=\"btn btn-success\">Post</button></a>\n");
+        out.write("                    <a href=\"PostManagementControl\"><button type=\"button\" class=\"btn btn-primary\">Post Management</button></a>\n");
+        out.write("                ");
+        int evalDoAfterBody = _jspx_th_c_if_0.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_if_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_0);
+      return true;
+    }
+    _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_0);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_if_1(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:if
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_1 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_if_1.setPageContext(_jspx_page_context);
+    _jspx_th_c_if_1.setParent(null);
+    _jspx_th_c_if_1.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${sessionScope.acc.isCus == 1}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_if_1 = _jspx_th_c_if_1.doStartTag();
+    if (_jspx_eval_c_if_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\n");
+        out.write("                    <a href=\"postLiquidation.jsp\"><button type=\"button\" class=\"btn btn-success\">Post</button></a>\n");
+        out.write("                    <a href=\"PostManagementCusControl\"><button type=\"button\" class=\"btn btn-primary\">Manage Post</button></a>\n");
+        out.write("                ");
+        int evalDoAfterBody = _jspx_th_c_if_1.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_if_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_1);
+      return true;
+    }
+    _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_1);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_if_2(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:if
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_2 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_if_2.setPageContext(_jspx_page_context);
+    _jspx_th_c_if_2.setParent(null);
+    _jspx_th_c_if_2.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${sessionScope.acc == null}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_if_2 = _jspx_th_c_if_2.doStartTag();
+    if (_jspx_eval_c_if_2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\n");
+        out.write("                    <a href=\"LoginControl\"><button type=\"button\" class=\"btn btn-success\">Post</button></a>\n");
+        out.write("                    <!--<a href=\"PostManagementControl\"><button type=\"button\" class=\"btn btn-primary\">Manager Post</button></a>-->\n");
+        out.write("                ");
+        int evalDoAfterBody = _jspx_th_c_if_2.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_if_2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_2);
+      return true;
+    }
+    _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_2);
+    return false;
+  }
+
   private boolean _jspx_meth_c_forEach_0(PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
@@ -196,7 +297,7 @@ public final class mainLiquidation_jsp extends org.apache.jasper.runtime.HttpJsp
           out.write("\n");
           out.write("                        <div class=\"col-sm-4 \">\n");
           out.write("                            <div class=\"best_shoes \">\n");
-          out.write("                                <p class=\"best_text \">");
+          out.write("                                <p class=\"best_text \" >");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${o.title}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</p>\n");
           out.write("                                <div class=\"shoes_icon \"><img class=\"list_product \" src=\"");
@@ -209,7 +310,9 @@ public final class mainLiquidation_jsp extends org.apache.jasper.runtime.HttpJsp
           out.write("$</p>\n");
           out.write("                                    </div>\n");
           out.write("                                    <div class=\"right_part addToCart_btn_listP\">\n");
-          out.write("                                        <a href=\"#viewdetail\" class=\"btn btn-success btn-block\">View Detail</a>\n");
+          out.write("                                        <a href=\"postDescriptionControl?ID=");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${o.ID}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("\" class=\"btn btn-success btn-block\">View Detail</a>\n");
           out.write("                                    </div>\n");
           out.write("                                </div>\n");
           out.write("                            </div>\n");

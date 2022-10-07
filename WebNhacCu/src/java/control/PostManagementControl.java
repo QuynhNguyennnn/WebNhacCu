@@ -40,7 +40,7 @@ public class PostManagementControl extends HttpServlet {
         List<Liquidation> list = new ArrayList<Liquidation>();
         list = dao.getWatingLiquidation();
         List<Liquidation> listapp = new ArrayList<Liquidation>();
-        listapp = dao.getAllLiquidation();
+        listapp = dao.getApprovedLiquidation();
         request.setAttribute("listLiqui", list);
         request.setAttribute("listLiquiApproved", listapp);
         request.getRequestDispatcher("postManage.jsp").forward(request, response);

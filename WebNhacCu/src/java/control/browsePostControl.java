@@ -40,8 +40,8 @@ public class browsePostControl extends HttpServlet {
         DAO dao = new DAO();
         String id = request.getParameter("post_id");
         dao.editLiquidationStatus(id);
-        response.sendRedirect("PostManagementControl");
-//        request.getRequestDispatcher("PostManagementControl").forward(request, response);
+//        response.sendRedirect("PostManagementControl");
+        request.getRequestDispatcher("PostManagementControl").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

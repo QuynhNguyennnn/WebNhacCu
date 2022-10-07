@@ -954,6 +954,32 @@ public class DAO {
                         rs.getInt(10)));
             }
         } catch (Exception e) {
+            System.out.println(e);
+        }
+        return list;
+    }
+    
+    public List<Liquidation> getApprovedLiquidation() {
+        List<Liquidation> list = new ArrayList<>();
+        String query = "select * from Liquidation where SellStatus = 1";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Liquidation(rs.getString(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getInt(6),
+                        rs.getInt(7),
+                        rs.getInt(8),
+                        rs.getDate(9),
+                        rs.getInt(10)));
+            }
+        } catch (Exception e) {
+            System.out.println(e);
         }
         return list;
     }
@@ -1067,7 +1093,11 @@ public class DAO {
 
     public static void main(String[] args) {
         DAO dao = new DAO();
-        dao.editLiquidationStatus("2");
+        List<Liquidation> list = new ArrayList<>();
+        list = dao.getApprovedLiquidation();
+        for (Liquidation liquidation : list) {
+            System.out.println(liquidation);
+        }
 
     }
 
